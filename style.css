@@ -1,0 +1,248 @@
+/* Config geral*/
+body, html { 
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #51699C;
+
+}
+
+/*Menu*/
+nav {
+    background-color: #1e1e2d; /* Cor de fundo do menu */
+    padding: 15px 20px;
+    font-family: 'Poppins', sans-serif; /* Escolha de uma fonte boa */
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 20px 0 0;
+    display: flex;
+    justify-content: space-between; /* Distribui o espaço entre os itens */
+    align-items: center;
+
+}
+
+nav ul li.profile {
+    display: flex;
+    align-items: center;
+}
+
+/* Ajuste para os outros itens */
+nav ul li {
+    margin-right: 20px; /* Espaçamento entre os itens */
+}
+
+
+
+/* Estilo da imagem de perfil */
+.profile {
+    margin-right: 200px;
+}
+
+nav ul li.profile img {
+    border-radius: 50%;
+    margin-right: 10px;
+    
+}
+
+.money-gold {
+    display: flex;
+    flex-direction: column;
+    color: #fff; /* Cor do texto para o dinheiro */
+    font-weight: bold; /* Mais destacado */
+}
+
+/* Estilo da classe gold com a cor de ouro */
+.money-gold .gold {
+    color: #FFD700; /* Cor de ouro */
+}
+
+
+#home {
+    padding-left: 10px;
+    border-left: 2px solid white;
+}
+/* Estilo dos links */
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff; /* Cor padrão do texto */
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+nav ul li a:hover {
+    color: #f0a500; /* Cor do texto ao passar o mouse */
+}
+
+/* Espaçamento entre o ícone e o texto */
+nav ul li a .material-icons {
+    margin-right: 8px; /* Espaçamento entre ícone e texto */
+    transition: color 0.3s ease; /* Transição suave para o hover */
+    
+}
+
+/* Efeito hover nos ícones */
+nav ul li a:hover .material-icons {
+    color: #FFD700; /* Cor dourada no hover */
+}
+
+@media (max-width: 800px) {
+    /*Menu*/
+    .money-gold {
+        font-size: 14px;
+    }
+    .profile {
+        margin-right: 50px;
+    }
+
+    nav ul li a {
+        font-size: 0; /* Esconde o texto */
+    }
+
+    nav ul li a span.material-icons {
+        font-size: 28px; /* Aumenta os ícones */
+        margin-right: 0; /* Remove espaçamento entre ícone e texto */
+    }
+
+    /*Footer*/
+    #region-info #dynamic-state-name, #region-info #clicked-state-name {
+        font-size: 12px; /* Tamanho do nome do estado */
+        font-weight: bold; /* Mais destacado */
+    }
+}
+
+
+/*Corpo do game*/
+svg {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+    z-index: 0; /* Mapa ficará abaixo do menu */
+    margin-top: 60px; /* Espaço para o menu fixo */
+}
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin-top: 30px;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;    /* Centraliza verticalmente */
+    transition: transform 0.2s; /* Transição suave no zoom */
+    transform-origin: 50% 50%; /* Centraliza o zoom */
+}
+#BR{
+    fill: green;
+}
+
+#ID{ 
+    fill: red;
+}
+
+path {
+    fill: rgb(178, 179, 179);
+    stroke: black;
+    stroke-width: 1px;
+    cursor: pointer;
+}
+
+path:hover{
+    fill: rgb(255, 255, 255);
+    stroke: rgb(168, 167, 167);
+    stroke-width: 2px;
+    transition: fill 0.4s;
+}
+
+.norte {
+    fill: #00ff1e;
+}
+.nordeste{
+    fill: brown;
+}
+.centro-oeste{
+    fill: yellow;
+}
+.sudeste {
+    fill: rgb(13, 13, 208);
+}
+.sul {
+    fill: pink;
+}
+
+
+/* ---------- Roda pé do mapa --------------- */
+
+#footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.447);
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+#region-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#region-info p {
+    margin: 0; /* Remove margens padrão */
+}
+
+#region-info #dynamic-state-name, #region-info #clicked-state-name {
+    font-size: 18px; /* Tamanho do nome do estado */
+    font-weight: bold; /* Mais destacado */
+}
+
+#region-info #travel-time, #region-info #clicked-travel-time {
+    font-size: 9px; /* Reduz o tamanho para parecer descrição */
+    color: rgba(255, 255, 255, 0.7); /* Menos destaque */
+    margin-top: 2px; /* Espaço reduzido entre nome e tempo estimado */
+}
+
+#dynamic-region-info, #clicked-region-info {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Mantém um espaço entre a imagem e a informação */
+}
+
+#dynamic-state-image, #clicked-state-image {
+    width: 50px; /* Define a largura da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+#clicked-footer-button {
+    background-color: #1e1e2d; /* Cor do botão */
+    color: white; /* Cor do texto do botão */
+    border-color: white;
+    text-align: center; /* Centraliza o texto */
+    border-radius: 3px; /* Arredonda as bordas do botão */
+    padding: 5px 20px; /* Espaçamento interno do botão */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    margin: 0px 30px 0px 10px;
+}
+#clicked-footer-button:hover{
+    color: #f0a500; /* Cor do texto ao passar o mouse */
+    border-color: #f0a500;
+}
+
+.travel-time{
+    color: rgb(171, 170, 170);
+    
+}
